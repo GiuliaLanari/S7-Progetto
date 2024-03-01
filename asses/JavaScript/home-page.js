@@ -56,12 +56,11 @@ fetch(URL, {
 
       const dettagliBtn = document.createElement("a");
       dettagliBtn.classList.add("btn", "btn-info");
-      //dettagliBtn.innerText = "Informazioni";
-      //dettagliBtn.href = "./details.html";
-      //const postId = objFoto._id;
-      //onsole.log(objFoto._id);
+      dettagliBtn.innerText = "Informazioni";
+      dettagliBtn.href = "./details.html";
 
-      dettagliBtn.innerHTML = `<a href="./details.html?agendaId=${appointment._id}">Dettagli</a>`;
+      const postId = objFoto._id;
+      console.log(objFoto._id);
 
       cardBody.appendChild(TitoloH5);
       cardBody.appendChild(prezzo);

@@ -3,17 +3,16 @@ const URL = "https://striveschool-api.herokuapp.com/api/product/";
 const AuthenticationKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOTc2MTRjNTllYzAwMTk5MGQ2ZTYiLCJpYXQiOjE3MDkyODMxNjksImV4cCI6MTcxMDQ5Mjc2OX0.KZCHGXqImKcqGr7zGKXszDY9su3m0Y3NGYP9AEzZhdU";
 
-const parametri = new URLSearchParams(window.location.search);
-const postId = parametri.get(_id);
-
-console.log(postId);
-
+//const parametri = new URLSearchParams(window.location.search);
+//const postId = parametri.get(_id);
+//console.log(postId);
+/*
 window.onload = () => {
   const sottoTitoloVariabile = document.getElementById("title-alt");
   const aggiungiBtn = document.getElementById("aggiungiBtn");
   const cancellaBtn = document.getElementById("cancellaBtn");
 
-  if (selezionatoId) {
+  if (postId) {
     sottoTitoloVariabile.innerText = "- Modifica foto";
     aggiungiBtn.innerText = "Modigica Foto";
     aggiungiBtn.classList.add("btn-secondary");
@@ -41,6 +40,7 @@ window.onload = () => {
     aggiungiBtn.classList.add("btn-primary");
   }
 };
+*/
 
 const submitFunzione = (e) => {
   e.preventDefault();
@@ -76,7 +76,7 @@ const submitFunzione = (e) => {
     })
     .catch((error) => console.log(error));
 };
-
+/*
 const cancellaPost = () => {
   const conferma = confirm("Sei sicuro di voler elliminare il Post?");
   if (conferma) {
@@ -92,3 +92,4 @@ const cancellaPost = () => {
       });
   }
 };
+*/
