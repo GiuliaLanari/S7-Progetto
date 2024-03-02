@@ -61,7 +61,6 @@ fetch(URL, {
       dettagliBtn.href = `./details.html?postId=${objFoto._id}"`;
 
       const postId = objFoto._id;
-      console.log(objFoto._id);
 
       cardBody.appendChild(TitoloH5);
       cardBody.appendChild(prezzo);

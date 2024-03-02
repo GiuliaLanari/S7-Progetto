@@ -10,7 +10,7 @@ const URL = cardID
 
 const method = cardID ? "PUT" : "POST";
 
-console.log(cardID);
+//console.log(cardID);
 
 window.onload = () => {
   const sottoTitoloVariabile = document.getElementById("title-alt");
@@ -18,14 +18,14 @@ window.onload = () => {
   const cancellaBtn = document.getElementById("cancellaBtn");
 
   if (cardID) {
-    sottoTitoloVariabile.innerText = "- Modifica foto";
-    aggiungiBtn.innerText = "Modigica Foto";
+    sottoTitoloVariabile.innerText = "Modifica foto";
+    aggiungiBtn.innerText = "Modifica Foto";
     aggiungiBtn.classList.add("btn-secondary");
-
     cancellaBtn.classList.remove("d-none");
+    /////prova
 
     fetch(URL, {
-      method: "GET",
+      method,
       headers: {
         Authorization: "Bearer " + AuthenticationKey,
       },
@@ -39,11 +39,11 @@ window.onload = () => {
       })
 
       .then((post) => {
-        document.getElementById("nome").value;
-        document.getElementById("descrizione").value;
-        document.getElementById("brand").value;
-        document.getElementById("foto").value;
-        document.getElementById("prezzo").value;
+        document.getElementById("nome").value = post.name;
+        document.getElementById("descrizione").value = post.description;
+        document.getElementById("brand").value = post.brand;
+        document.getElementById("foto").value = post.imageUrl;
+        document.getElementById("prezzo").value = post.price;
       });
   } else {
     sottoTitoloVariabile.innerText = "Crea nuovo Post";
@@ -91,10 +91,13 @@ const submitFunzione = (e) => {
 };
 
 const cancellaPost = () => {
-  const conferma = confirm("Sei sicuro di voler elliminare " + newPost.name + " ?");
+  const conferma = confirm("Sei sicuro di voler elliminare?");
   if (conferma) {
     fetch(URL, {
       method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + AuthenticationKey,
+      },
     })
       .then((risposta) => risposta.json())
       .then((cancelPost) => {
