@@ -16,6 +16,7 @@ window.onload = () => {
   const sottoTitoloVariabile = document.getElementById("title-alt");
   const aggiungiBtn = document.getElementById("aggiungiBtn");
   const cancellaBtn = document.getElementById("cancellaBtn");
+  const resetBtn = document.getElementById("resetBtn");
 
   if (cardID) {
     sottoTitoloVariabile.innerText = "Modifica foto";
@@ -49,6 +50,8 @@ window.onload = () => {
     sottoTitoloVariabile.innerText = "Crea nuovo Post";
     aggiungiBtn.innerText = "Crea Post";
     aggiungiBtn.classList.add("btn-primary");
+    resetBtn.classList.remove("d-none");
+    resetBtn.innerText = "Reset form";
   }
 };
 
@@ -81,7 +84,7 @@ const submitFunzione = (e) => {
 
     .then((newPost) => {
       console.log(newPost);
-      alert("Post Salvato: " + newPost.name);
+      alert("Il Post: " + newPost.name + (cardID ? " è stato modificato" : " è stato creato"));
       e.target.reset();
       setTimeout(() => {
         window.location.assign("./home-page.html");
@@ -106,5 +109,16 @@ const cancellaPost = () => {
           window.location.assign(".//home-page.html");
         });
       });
+  }
+};
+
+const resetForm = () => {
+  const conferma = confirm("Sei sicuro di voler resettare il for?");
+  if (conferma) {
+    document.getElementById("nome").value = "";
+    document.getElementById("descrizione").value = "";
+    document.getElementById("brand").value = "";
+    document.getElementById("foto").value = "";
+    document.getElementById("prezzo").value = "";
   }
 };
