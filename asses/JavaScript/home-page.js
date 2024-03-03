@@ -51,14 +51,14 @@ fetch(URL, {
       btnDiv.classList.add("d-flex", "justify-content-center", "align-items-center");
 
       const btnModifica = document.createElement("a");
-      btnModifica.classList.add("btn", "me-5", "btn-primary");
+      btnModifica.classList.add("btn", "me-5", "btn-secondary");
       btnModifica.innerText = "Modifica";
-      btnModifica.href = `./back-office-page.html?postId=${objFoto._id}"`;
+      btnModifica.href = `./back-office-page.html?postId=${objFoto._id}`;
 
       const dettagliBtn = document.createElement("a");
       dettagliBtn.classList.add("btn", "btn-info");
       dettagliBtn.innerText = "Informazioni";
-      dettagliBtn.href = `./details.html?postId=${objFoto._id}"`;
+      dettagliBtn.href = `./details.html?postId=${objFoto._id}`;
 
       const postId = objFoto._id;
 
